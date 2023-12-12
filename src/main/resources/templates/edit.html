@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="/static/style/fonts/calibri.ttf">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/student/{id}(id=${student.getId()})}" th:object="${student}">
+    <div style="text-align: center; margin-top: 100px">
+        <b style="font-family: 'Proxima Nova Bl', sans-serif ; font-size: 40px;">Add the new student</b><hr/>
+        <div style="text-align: center; margin-top: 1%">
+            <b>
+                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="name">Введите имя: </label>
+                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="text" th:field="*{name}" id="name">
+                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+            </b>
+        </div>
+        <div style="text-align: center; margin-top: 1%">
+            <b>
+                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="name">Введите почту: </label>
+                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="email" th:field="*{email}" id="email">
+                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name error</div>
+            </b>
+        </div>
+        <div style="text-align: center; margin-top: 1%">
+            <b>
+                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="name">Введите пароль: </label>
+                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="password" th:field="*{secretkey}" id="secretkey">
+                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('secretkey')}" th:errors="*{secretkey}">Name error</div>
+            </b>
+        </div>
+        <div style="text-align: center; margin-top: 1%">
+            <b>
+                <button type="submit" style="font-family: 'Calibri', sans-serif ;font-size: 18px; ">Update</button>
+            </b>
+        </div>
+    </div>
+</form>
+</body>
+</html>

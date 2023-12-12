@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Diaries</title>
+    <link rel="stylesheet" href="/style/fonts/calibri.ttf">
+    <link rel="stylesheet" href="/style/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <div class="container"><h4 class="navbar-brand logo" href="#">Subjects</h4>
+        <div id="navcol-1" class="collapse navbar-collapse">
+        </div>
+    </div>
+</nav>
+<section class="mx-top">
+<div th:each="subject : ${sub}">
+    <label style="font-family: 'Calibri', sans-serif ;font-size: 30px; " >Предмет: </label>
+    <a style="font-family: 'Calibri', sans-serif ;font-size: 30px; " th:href="@{/subject/{id}(id=${subject.getId()})}" th:text="${subject.getSubjectname()}" class="a">student   </a>
+    <hr>
+</div></section>
+</body>
+</html>

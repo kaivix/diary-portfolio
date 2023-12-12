@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Form</title>
+  <link rel="stylesheet" href="/style/fonts/calibri.ttf">
+  <link rel="stylesheet" href="/style/css/style.css">
+
+</head>
+<body class="boddy">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+  <div class="container"><h4 class="navbar-brand logo" href="#">Students</h4>
+    <div id="navcol-1" class="collapse navbar-collapse">
+    </div>
+  </div>
+</nav>
+<section class="mx-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 br mx-10 bg-white mb-10 ex" th:each="person : ${student}">
+        <div>
+          <label style="font-family: 'Calibri', sans-serif ;font-size: 30px; " >Имя: </label><br>
+          <a class="a" style="font-family: 'Calibri', sans-serif ;font-size: 30px; " th:href="@{/student/{id}(id=${person.getId()})}" th:text="${person.getName()}">student   </a><br>
+          <label style="font-family: 'Calibri', sans-serif ;font-size: 30px; " >Фамилия: </label><br>
+          <a class="a" style="font-family: 'Calibri', sans-serif ;font-size: 30px; " th:href="@{/student/{id}(id=${person.getId()})}" th:text="${person.getLastname()}">student   </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <a  style="font-family: 'Calibri', sans-serif ;font-size: 20px; " href="student/add" class="my-button mb-5">● Добавить студента</a>
+  <br>
+  <a style="font-family: 'Calibri', sans-serif ;font-size: 20px; " href="subject" class="my-button mb-5">● Список предметов</a>
+  <br>
+  <a style="font-family: 'Calibri', sans-serif ;font-size: 20px; " href="student" class="my-button mb-10">● Список студентов</a>
+</body>
+</html>

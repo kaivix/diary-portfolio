@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Person Profile</title>
+  <link rel="stylesheet" href="/static/style/fonts/calibri.ttf">
+</head>
+<body>
+<div >
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" >Предмет: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${grades.getSubject().getSubjectname()}">student</label>
+  <br>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;">Имя: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${grades.getStudent().getName()}">student</label>
+  <br>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;">Фамилия: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${grades.getStudent().getLastname()}">student</label>
+  <br>
+  <label style="font-family: 'Calibri', sans-serif ;font-size: 30px; " >Оценка: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${grades.grade}">student1   </label>
+  <hr>
+</div>
+</body>
+</html>

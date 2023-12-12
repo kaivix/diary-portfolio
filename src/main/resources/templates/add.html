@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="/style/fonts/calibri.ttf">
+    <link rel="stylesheet" href="/style/css/style.css">
+</head>
+<body class="boddy">
+<section class="mx-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 br mx-auto bg-white ex" >
+                <form th:method="POST" th:action="@{/student}" th:object="${student}">
+                    <div style="text-align: center">
+                        <b style="font-family: 'Calibri', sans-serif ; font-size: 40px;">Добавить нового студента</b><hr/>
+                        <div style="text-align: center; margin-top: 1%">
+                            <b>
+                                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="name">Введите имя: </label>
+                                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="text" th:field="*{name}" id="name">
+                                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+                            </b>
+                        </div>
+                        <div style="text-align: center; margin-top: 1%">
+                            <b>
+                                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="lastname">Введите фамилию: </label>
+                                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="text" th:field="*{lastname}" id="lastname">
+                                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Name error</div>
+                            </b>
+                        </div>
+                        <div style="text-align: center; margin-top: 1%">
+                            <b>
+                                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="email">Введите почту: </label>
+                                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="email" th:field="*{email}" id="email">
+                                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name error</div>
+                            </b>
+                        </div>
+                        <div style="text-align: center; margin-top: 1%">
+                            <b>
+                                <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="secretkey">Введите пароль: </label>
+                                <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="password" th:field="*{secretkey}" id="secretkey">
+                                <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('secretkey')}" th:errors="*{secretkey}">Name error</div>
+                            </b>
+                        </div>
+                        <div style="text-align: center; margin-top: 1%">
+                            <b>
+                                <button style="font-family: 'Calibri', sans-serif ;font-size: 18px; ">Submit</button>
+                            </b>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

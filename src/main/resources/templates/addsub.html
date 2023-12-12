@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Diary</title>
+  <link rel="stylesheet" href="/static/style/fonts/calibri.ttf">
+</head>
+<body>
+<form th:method="POST" th:action="@{/diary}" th:object="${diary}">
+  <div style="text-align: center; margin-top: 100px">
+    <b style="font-family: 'Calibri', sans-serif ; font-size: 40px;">Add the new student</b><hr/>
+    <div style="text-align: center; margin-top: 1%">
+      <b>
+        <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="id">Введите айди: </label>
+        <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="text" th:field="*{student}" id="id">
+        <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('id')}" th:errors="*{student}">Name error</div>
+      </b>
+    </div>
+    <div style="text-align: center; margin-top: 1%">
+      <b>
+        <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " for="grade">Введите оценку: </label>
+        <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="text" th:field="*{grade}" id="grade">
+        <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}">Name error</div>
+      </b>
+    </div>
+    <div style="text-align: center; margin-top: 1%">
+      <b>
+        <label style="font-family: 'Calibri', sans-serif ;font-size: 18px; " >Введите предмет: </label>
+        <input style="font-family: 'Calibri', sans-serif ; font-size: 16px;" type="text" th:field="*{subject}" id="subject">
+        <div style="font-family: 'Calibri', sans-serif ; font-size: 16px; color: red" th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}">Name error</div>
+      </b>
+    </div>
+    <div style="text-align: center; margin-top: 1%">
+      <b>
+        <button style="font-family: 'Calibri', sans-serif ;font-size: 18px; ">Выставить оценку</button>
+      </b>
+    </div>
+  </div>
+</form>
+</body>
+</html>

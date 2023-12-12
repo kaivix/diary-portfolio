@@ -1,0 +1,27 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Person Profile</title>
+  <link rel="stylesheet" href="/static/style/fonts/calibri.ttf">
+</head>
+<body>
+<div >
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" >Имя: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${student.getName()}">student</label>
+  <br>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;">Id: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${student.getId()}">student</label>
+  <br>
+  <label style="font-family: 'Calibri', sans-serif ;font-size: 30px; " >Почта: </label>
+  <label style="font-family: 'Calibri', sans-serif ; font-size: 30px;" th:text="${student.getEmail()}">student1   </label>
+  <br>
+  <a style="font-family: 'Calibri', sans-serif ;font-size: 30px; " th:href="@{/student/{id}/edit(id=${student.getId()})}">edit</a>
+  <form th:method="DELETE" th:action="@{/student/{id}(id=${student.getId()})}">
+    <button type="submit">Delete</button>
+  </form>
+  <br>
+  <a style="font-family: 'Calibri', sans-serif ;font-size: 20px; " href="/" class="my-button">Список студентов</a>
+</div>
+</body>
+</html>
